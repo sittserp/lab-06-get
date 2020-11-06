@@ -26,6 +26,7 @@ export default class Create extends Component {
             hardwood: this.state.hardwood,
             type_id: this.state.typeId,
             owner_id: userFromLocalStorage.userId
+            // work!
         };
 
         await fetch
