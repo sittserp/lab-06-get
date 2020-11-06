@@ -24,8 +24,8 @@ export default class Create extends Component {
             name: this.state.name,
             hardness_factor: this.state.hardnessFactor,
             hardwood: this.state.hardwood,
-            type_id: this.state.typeID,
-            ownder_id: userFromLocalStorage.userId
+            type_id: this.state.typeId,
+            owner_id: userFromLocalStorage.userId
         };
 
         await fetch
@@ -54,7 +54,7 @@ export default class Create extends Component {
                     </label>
                     <label>
                         hardwood
-        <input onChange={e => this.setState({ hardwood: e.target.value })} type="boolean" />
+        <input onChange={e => this.setState({ hardwood: e.target.value })} />
                     </label>
                     <label>
                         type

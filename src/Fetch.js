@@ -27,8 +27,8 @@ export default class Fetch extends Component {
                     <div className="tree" key={tree.name}>
                         <p>{tree.name}</p>
                         <p>Hardness Factor: {tree.hardness_factor}</p>
-                        <p>Is Hardwood: {tree.hardwood}</p>
-                        <p>Type: {tree.type}</p>
+                        <p>Is Hardwood: {tree.hardwood.toString()}</p>
+                        <p>Type: {tree.type_id}</p>
                     </div>
                 )
 
