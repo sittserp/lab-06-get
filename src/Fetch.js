@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import fetch from 'superagent';
-
+import { Link } from 'react-router-dom';
 
 export default class Fetch extends Component {
 
@@ -24,12 +24,14 @@ export default class Fetch extends Component {
         return (
             <div className="tree-list">
                 { this.state.trees.map(tree =>
-                    <div className="tree" key={tree.name}>
-                        <p>{tree.name}</p>
-                        <p>Hardness Factor: {tree.hardness_factor}</p>
-                        <p>Is Hardwood: {tree.hardwood.toString()}</p>
-                        <p>Type: {tree.type_id}</p>
-                    </div>
+                    <Link to={`/detail/${tree.id}`}>
+                        <div className="tree" key={tree.name}>
+                            <p>{tree.name}</p>
+                            <p>Hardness Factor: {tree.hardness_factor}</p>
+                            <p>Is Hardwood: {tree.hardwood.toString()}</p>
+                            <p>Type: {tree.type_id}</p>
+                        </div>
+                    </Link>
                 )
 
                 })
