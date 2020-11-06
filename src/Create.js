@@ -60,6 +60,7 @@ export default class Create extends Component {
                     <label>
                         type
         <select onChange={this.handleChange}>
+                            <option></option>
                             {
                                 this.state.types.map(type => <option key={type.id} value={type.id}>{type.type}</option>)
                             }
