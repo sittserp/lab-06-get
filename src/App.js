@@ -13,6 +13,7 @@ import Home from './Home.js';
 import Header from './Header.js';
 
 export default class App extends Component {
+
   render() {
     return (
       <div>
@@ -22,8 +23,10 @@ export default class App extends Component {
             <Route
               path="/"
               exact
-              render={(routerProps) => <Fetch {...routerProps} />}
+              render={(routerProps) => <Fetch {...routerProps} />
+              }
             />
+
             <Route
               path="/home"
               exact
@@ -45,3 +48,6 @@ export default class App extends Component {
     )
   }
 }
+
+
+
