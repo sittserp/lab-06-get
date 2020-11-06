@@ -8,6 +8,7 @@ import {
 } from 'react-router-dom';
 import Fetch from './Fetch.js';
 import Create from './Create.js';
+import Detail from './Detail.js';
 
 export default class App extends Component {
   render() {
@@ -24,6 +25,11 @@ export default class App extends Component {
               path="/create"
               exact
               render={(routerProps) => <Create {...routerProps} />}
+            />
+            <Route
+              path="/detail/:id"
+              exact
+              render={(routerProps) => <Detail {...routerProps} />}
             />
           </Switch>
         </Router>
