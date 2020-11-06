@@ -1,6 +1,6 @@
 import fetch from 'superagent';
 
-const URL = process.env.REACT_APP_API_URL || 'https://frozen-escarpment-09808.herokuapp.com/';
+export const URL = process.env.REACT_APP_API_URL || 'https://frozen-escarpment-09808.herokuapp.com/';
 
 export async function fetchTrees() {
     try {

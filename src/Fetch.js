@@ -1,23 +1,16 @@
 import React, { Component } from 'react'
-import fetch from 'superagent';
 import { Link } from 'react-router-dom';
+import { fetchTrees } from './fetches.js';
 
 export default class Fetch extends Component {
 
     state = {
         trees: []
     }
-
     componentDidMount = async () => {
-        await this.fetchTrees();
-    }
+        const trees = await fetchTrees();
 
-    fetchTrees = async () => {
-        const response = await fetch.get(`https://frozen-escarpment-09808.herokuapp.com/trees`);
-
-        this.setState({
-            trees: response.body
-        })
+        this.setState({ trees });
     }
 
     render() {

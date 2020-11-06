@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import fetch from 'superagent';
+import { fetchTypes, createTree } from './fetches';
 
 const userFromLocalStorage = {
     userId: 1
@@ -12,9 +12,9 @@ export default class Create extends Component {
     }
 
     componentDidMount = async () => {
-        const response = await fetch.get(`https://frozen-escarpment-09808.herokuapp.com/types`);
+        const types = await fetchTypes();
 
-        this.setState({ types: response.body })
+        this.setState({ types })
     }
 
     handleSubmit = async (e) => {
@@ -26,12 +26,9 @@ export default class Create extends Component {
             hardwood: this.state.hardwood,
             type_id: this.state.typeId,
             owner_id: userFromLocalStorage.userId
-            // work!
         };
 
-        await fetch
-            .post('https://frozen-escarpment-09808.herokuapp.com/trees')
-            .send(newTree);
+        await createTree(newTree);
 
         this.props.history.push('/');
     }
