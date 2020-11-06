@@ -3,6 +3,7 @@ import {
     fetchTypes,
     fetchTree,
     updateTree,
+    deleteTree,
 } from './fetches.js';
 
 const userFromLocalStorage = {
@@ -44,6 +45,14 @@ export default class Create extends Component {
                 type_id: this.state.typeId,
                 owner_id: userFromLocalStorage.userId
             });
+
+        this.props.history.push('/');
+    }
+
+    handleDelete = async (e) => {
+        e.preventDefault();
+
+        await deleteTree(this.props.match.params.id);
 
         this.props.history.push('/');
     }
@@ -103,6 +112,7 @@ export default class Create extends Component {
                     </label>
                     <button>Submit</button>
                 </form>
+                <button onClick={this.handleDelete}>Delete</button>
             </div>
         )
     }
