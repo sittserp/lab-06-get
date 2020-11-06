@@ -54,8 +54,9 @@ export default class Create extends Component {
         <input onChange={e => this.setState({ hardnessFactor: e.target.value })} type="number" />
                     </label>
                     <label>
-                        hardwood
-        <input onChange={e => this.setState({ hardwood: e.target.value })} />
+                        hardwood? true:
+        <input name="hardwood" type="radio" value="true" onChange={e => this.setState({ hardwood: e.target.value })} />
+                        false:<input name="hardwood" type="radio" value="false" onChange={e => this.setState({ hardwood: e.target.value })} />
                     </label>
                     <label>
                         type
